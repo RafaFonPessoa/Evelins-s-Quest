@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b3jxlmxua8ixt"]
+[gd_scene load_steps=28 format=3 uid="uid://b3jxlmxua8ixt"]
 
 [ext_resource type="Script" path="res://scenes/farm_level/simon.gd" id="1_cdk20"]
 [ext_resource type="Texture2D" uid="uid://b67qqrq3jli8r" path="res://scenes/farm_level/cropped-background_farm-pixelicious.png" id="2_pv8pk"]
@@ -20,7 +20,6 @@ modulate_color = Color(1, 1, 1, 0.745098)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k45e5"]
 texture = ExtResource("3_4cj8a")
-modulate_color = Color(0.196078, 0.196078, 0.196078, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pms3"]
 texture = ExtResource("4_2j0d6")
@@ -47,8 +46,25 @@ modulate_color = Color(0.14902, 0.14902, 0.14902, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ptnht"]
 texture = ExtResource("10_be5em")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2tmm5"]
+texture = ExtResource("10_be5em")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cirbf"]
+texture = ExtResource("10_be5em")
+modulate_color = Color(1, 1, 1, 0.607843)
+
 [sub_resource type="Theme" id="Theme_46tfc"]
 default_font = ExtResource("6_k5all")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pkl2f"]
+texture = ExtResource("10_be5em")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gsyei"]
+texture = ExtResource("10_be5em")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbyhy"]
+texture = ExtResource("10_be5em")
+modulate_color = Color(1, 1, 1, 0.694118)
 
 [sub_resource type="Theme" id="Theme_881ui"]
 default_font = ExtResource("6_k5all")
@@ -57,45 +73,46 @@ default_font = ExtResource("6_k5all")
 script = ExtResource("1_cdk20")
 
 [node name="Cropped-backgroundFarm-pixelicious" type="Sprite2D" parent="."]
-position = Vector2(581.371, 326.25)
-scale = Vector2(4.54196, 4.54196)
+position = Vector2(642, 364.25)
+scale = Vector2(5.01562, 5.07343)
 texture = ExtResource("2_pv8pk")
 
 [node name="Red" type="Button" parent="."]
-offset_left = 193.0
-offset_top = 433.0
-offset_right = 249.0
-offset_bottom = 488.0
+offset_left = 186.0
+offset_top = 504.0
+offset_right = 242.0
+offset_bottom = 559.0
 scale = Vector2(4.21962, 3.04)
 theme_override_styles/normal = SubResource("StyleBoxTexture_1xu3h")
 theme_override_styles/hover = SubResource("StyleBoxTexture_s3k40")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_k45e5")
 
 [node name="Green" type="Button" parent="."]
-offset_left = 502.0
-offset_top = 223.0
-offset_right = 558.0
-offset_bottom = 282.0
+offset_left = 547.0
+offset_top = 265.0
+offset_right = 603.0
+offset_bottom = 324.0
 scale = Vector2(3, 4)
 theme_override_styles/normal = SubResource("StyleBoxTexture_2pms3")
 theme_override_styles/hover = SubResource("StyleBoxTexture_o3o5l")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_581dy")
 
 [node name="Blue" type="Button" parent="."]
-offset_left = 803.0
-offset_top = 445.0
-offset_right = 856.0
-offset_bottom = 499.0
+offset_left = 830.0
+offset_top = 522.0
+offset_right = 883.0
+offset_bottom = 576.0
 scale = Vector2(4, 3)
 theme_override_styles/normal = SubResource("StyleBoxTexture_6jvre")
 theme_override_styles/hover = SubResource("StyleBoxTexture_g83tb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qr8he")
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 444.0
-offset_top = 495.0
-offset_right = 767.0
-offset_bottom = 565.0
+visible = false
+offset_left = 466.0
+offset_top = 572.0
+offset_right = 789.0
+offset_bottom = 642.0
 theme_override_fonts/font = ExtResource("6_k5all")
 theme_override_font_sizes/font_size = 25
 text = "OLHE ATENTAMENTE!"
@@ -103,10 +120,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
-offset_left = 503.0
-offset_top = 120.0
-offset_right = 674.0
-offset_bottom = 190.0
+offset_left = 550.0
+offset_top = 154.0
+offset_right = 721.0
+offset_bottom = 224.0
 theme_override_fonts/font = ExtResource("6_k5all")
 theme_override_font_sizes/font_size = 25
 text = "Rodada: 1"
@@ -115,31 +132,36 @@ vertical_alignment = 1
 
 [node name="RedButton" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_8acq7")
+volume_db = 5.0
 
 [node name="BlueButton" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_6c6wc")
+volume_db = 5.0
 
 [node name="GreenButton" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_8jvxc")
+volume_db = 5.0
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="GameOver"]
-offset_left = 308.0
-offset_top = 79.0
-offset_right = 851.0
-offset_bottom = 600.0
+offset_left = 392.0
+offset_top = 83.0
+offset_right = 935.0
+offset_bottom = 604.0
 color = Color(0.239216, 0.239216, 0.239216, 1)
 
 [node name="Reset" type="Button" parent="GameOver"]
-offset_left = 430.0
-offset_top = 440.0
-offset_right = 715.0
-offset_bottom = 533.0
+offset_left = 514.0
+offset_top = 444.0
+offset_right = 799.0
+offset_bottom = 537.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_k5all")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ptnht")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2tmm5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cirbf")
 text = "Tentar Novamente"
 
 [node name="Label" type="RichTextLabel" parent="GameOver"]
@@ -148,10 +170,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -248.5
-offset_top = -158.0
-offset_right = 248.5
-offset_bottom = 158.0
+offset_left = -220.0
+offset_top = -162.0
+offset_right = 277.0
+offset_bottom = 154.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
@@ -165,25 +187,31 @@ text = "
 [node name="Tutorial" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Tutorial"]
-offset_left = 308.0
-offset_top = 79.0
-offset_right = 851.0
-offset_bottom = 600.0
+offset_left = 363.0
+offset_top = 90.0
+offset_right = 906.0
+offset_bottom = 611.0
 color = Color(0.239216, 0.239216, 0.239216, 1)
 
 [node name="Button" type="Button" parent="Tutorial"]
-offset_left = 536.0
-offset_top = 514.0
-offset_right = 613.0
-offset_bottom = 545.0
+offset_left = 522.0
+offset_top = 466.0
+offset_right = 768.0
+offset_bottom = 565.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_k5all")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_pkl2f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gsyei")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kbyhy")
 text = "Começar
 "
 
 [node name="Label" type="RichTextLabel" parent="Tutorial"]
-offset_left = 336.0
-offset_top = 114.0
-offset_right = 833.0
-offset_bottom = 430.0
+offset_left = 391.0
+offset_top = 125.0
+offset_right = 888.0
+offset_bottom = 441.0
 theme = SubResource("Theme_881ui")
 text = "Hope Bringer deve seguir e caminho e evitar se perder, aperte as setas coloridas na ordem correta para poder sair da floresta. 
 (Objetivo é passar do round 5)

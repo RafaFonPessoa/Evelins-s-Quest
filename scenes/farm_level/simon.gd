@@ -40,19 +40,19 @@ func light_button(colors):
 			$Red.modulate = Color(1,0,0)
 			$RedButton.play()
 			await get_tree().create_timer(0.5).timeout
-			$Red.modulate = Color(1,1,1)
+			$Red.modulate = Color.hex(0x4e4e4e)
 		2:
 			print("Green")
-			$Green.modulate = Color(0,1,0)
+			$Green.modulate = Color.hex(0xffffff)
 			$GreenButton.play()
 			await get_tree().create_timer(0.5).timeout
-			$Green.modulate = Color(1,1,1)
+			$Green.modulate = Color.hex(0x4e4e4e)
 		3:
 			print("Blue")
-			$Blue.modulate = Color(0,0,1)
+			$Blue.modulate = Color.hex(0xffffff)
 			$BlueButton.play()
 			await get_tree().create_timer(0.5).timeout
-			$Blue.modulate = Color(1,1,1)
+			$Blue.modulate = Color.hex(0x4e4e4e)
 
 # Buttons Pressed
 func _on_blue_pressed():
