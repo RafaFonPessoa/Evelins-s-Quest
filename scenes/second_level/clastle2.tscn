@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://75exdtr8qewn"]
+[gd_scene load_steps=31 format=3 uid="uid://75exdtr8qewn"]
 
 [ext_resource type="Script" path="res://scenes/second_level/clastle2.gd" id="1_ppt67"]
 [ext_resource type="TileSet" uid="uid://bvsj7hkl6heeb" path="res://scenes/clastle.tres" id="2_qslb3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dbwqrasas1f17" path="res://sprites/Evelin.png" id="7_g2krv"]
 [ext_resource type="PackedScene" uid="uid://b0xm6l8m4snaa" path="res://scenes/player.tscn" id="8_x2ef2"]
 [ext_resource type="FontFile" uid="uid://d3se8245j0mkg" path="res://dialog/Salmon Typewriter 9 Regular.ttf" id="9_0vyqa"]
+[ext_resource type="AudioStream" uid="uid://bwpj8ndiqf6i4" path="res://scenes/first_level/mixkit-footsteps-on-mattress-loop-534.wav" id="10_d0n6f"]
 [ext_resource type="Texture2D" uid="uid://c0ud0oobnxq4i" path="res://icons-keyboard-16x16-1bit-ansdor.png" id="11_qqsg3"]
 [ext_resource type="Texture2D" uid="uid://cfj0noe4mv4s0" path="res://sprites/Idle.png" id="12_jl3cu"]
 
@@ -225,6 +226,9 @@ limit_bottom = 200
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("10_d0n6f")
 
 [node name="Level1" type="Area2D" parent="."]
 visible = false

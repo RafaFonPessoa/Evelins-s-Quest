@@ -58,7 +58,7 @@ func _physics_process(delta):
 	if lv2Door and Input.is_action_pressed("interact"):
 		TransitionScreen._fade_transition()
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://scenes/second_level/cave_level/cave_surface.tscn")
+		get_tree().change_scene_to_file("res://scenes/second_level/Cave_level(gabriel)/start_of_level.tscn")
 
 func _on_level_1_body_entered(body):
 	$Level1.visible = true
