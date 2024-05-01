@@ -1,100 +1,68 @@
 extends CharacterBody2D
 
 
-@export var speed : float = 150
-@export var acceleration : float = 10
+const ACELLERATION : float = 20.0
+const SPEED : float = 120.0
+const JUMP_VELOCITY : float = -300.0
+const GRAVITY = 900
 
-#Identify the direction where the character is facing
-var facing : int = 5
+@export var on_dialog : bool = false
 
-#Main
+@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var jump_audio : AudioStreamPlayer2D = $Jump
+@onready var walk_effect : AudioStreamPlayer2D = $Walk
+
 func _physics_process(delta):
-	player_moviment()
+	player_moviment(delta)
 	move_and_slide()
 
-#Input Controll and Player Moviment
-func player_moviment():
-	var direction = Input.get_vector("left", "right","up","down").normalized()
+func player_moviment(delta):
+	
+	if not is_on_floor():
+		velocity.y += GRAVITY * delta
+	
+	if on_dialog:
+		velocity.x = 0
+		sprite.play("idle")
+		return
+	
+	# Handle jump.
+	if Input.is_action_just_pressed("up") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		$Jump.play()
+	
+	
+	var direction = Input.get_axis("left", "right")
+	
+	if velocity.length() != 0 and is_on_floor(): 
+		if !walk_effect.playing:
+			walk_effect.pitch_scale = randf_range(.8, 1.2)
+			walk_effect.play()
+	else:
+		walk_effect.stop()
 	
 	if direction:
-		velocity.x =  move_toward(velocity.x, speed * direction.x, acceleration)
-		velocity.y =  move_toward(velocity.y, speed * direction.y, acceleration)
+		velocity.x = move_toward(velocity.x,direction * SPEED, ACELLERATION)
 	else:
-		velocity.x = move_toward(velocity.x, 0, acceleration)
-		velocity.y = move_toward(velocity.y, 0, acceleration)
+		velocity.x = move_toward(velocity.x, 0, ACELLERATION)
 	
-	
-	facing_update(direction)
-	animation_and_particles_controll(facing,direction)
+	animation_controll(direction)
+	move_and_slide()
 
-#Change facing Value
-func facing_update(direction):
-	#North
-	if direction == Vector2(0,-1):
-		facing = 1
-	#East
-	if direction == Vector2(1,0):
-		facing = 3
-	#South
-	if direction == Vector2(0,1):
-		facing = 5
-	#West
-	if direction == Vector2(-1,0):
-		facing = 7
+func animation_controll(direction):
+	if direction:
+		sprite.play("run")
+		
+		if direction > 0:
+			sprite.flip_h = false
+		else:
+			sprite.flip_h = true
 	
-	#NE
-	if direction.x > 0 and direction.y < 0:
-		facing = 2
-	#SE
-	if direction.x > 0 and direction.y > 0:
-		facing = 4
-	#SW
-	if direction.x < 0 and direction.y > 0:
-		facing = 6
-	#NW
-	if direction.x < 0 and direction.y < 0:
-		facing = 8
-
-#Change animation base on facing value
-func animation_and_particles_controll(facing,direction):
-	match facing:
-		1:
-			if direction:
-				$AnimatedSprite2D.play("walk1")
-			else:
-				$AnimatedSprite2D.play("idle1")
-		2:
-			if direction:
-				$AnimatedSprite2D.play("walk2")
-			else:
-				$AnimatedSprite2D.play("idle2")
-		3:
-			if direction:
-				$AnimatedSprite2D.play("walk3")
-			else:
-				$AnimatedSprite2D.play("idle3")
-		4:
-			if direction:
-				$AnimatedSprite2D.play("walk4")
-			else:
-				$AnimatedSprite2D.play("idle4")
-		5:
-			if direction:
-				$AnimatedSprite2D.play("walk5")
-			else:
-				$AnimatedSprite2D.play("idle5")
-		6:
-			if direction:
-				$AnimatedSprite2D.play("walk6")
-			else:
-				$AnimatedSprite2D.play("idle6")
-		7:
-			if direction:
-				$AnimatedSprite2D.play("walk7")
-			else:
-				$AnimatedSprite2D.play("idle7")
-		8:
-			if direction:
-				$AnimatedSprite2D.play("walk8")
-			else:
-				$AnimatedSprite2D.play("idle8")
+	elif not direction and is_on_floor():
+		sprite.play("idle")
+	
+	if not is_on_floor() and velocity.y > 0:
+		sprite.play("fall")
+	
+	if not is_on_floor() and velocity.y < 0:
+		sprite.play("jump")

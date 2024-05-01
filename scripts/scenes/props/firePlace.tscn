@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8f3rqsnt4ne8"]
+
+[ext_resource type="Texture2D" uid="uid://dw2tqhhfaehs2" path="res://light.png" id="2_wlsvo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8qasg"]
+load_path = "res://.godot/imported/anim_light2.png-b372203cadecaf0a368f864b1ddc6231.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvuj7"]
+atlas = SubResource("CompressedTexture2D_8qasg")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q41rh"]
+atlas = SubResource("CompressedTexture2D_8qasg")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el67o"]
+atlas = SubResource("CompressedTexture2D_8qasg")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2s14"]
+atlas = SubResource("CompressedTexture2D_8qasg")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bbcp1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvuj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q41rh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el67o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2s14")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="StaticBody2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_bbcp1")
+autoplay = "default"
+frame_progress = 0.652935
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.839216, 0.301961, 0, 1)
+shadow_enabled = true
+texture = ExtResource("2_wlsvo")

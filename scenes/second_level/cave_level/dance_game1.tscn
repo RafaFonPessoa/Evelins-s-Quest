@@ -1,0 +1,214 @@
+[gd_scene load_steps=26 format=3 uid="uid://n30phe3wc7lp"]
+
+[ext_resource type="Script" path="res://scenes/second_level/cave_level/ArrowDetector.gd" id="1_dkhsa"]
+[ext_resource type="PackedScene" uid="uid://dlhvyuqs88yki" path="res://scenes/second_level/cave_level/arrow_spawner.tscn" id="1_fwrkj"]
+[ext_resource type="Script" path="res://scenes/second_level/cave_level/dance_game1.gd" id="1_hngsc"]
+[ext_resource type="Texture2D" uid="uid://cuugwohnfontj" path="res://scenes/second_level/health_00.png" id="4_0xp0m"]
+[ext_resource type="Texture2D" uid="uid://cgmfl2eigp1v3" path="res://scenes/second_level/health_10.png" id="4_y5m7n"]
+[ext_resource type="Texture2D" uid="uid://b81paimbxvawe" path="res://scenes/second_level/health_09.png" id="5_bxqh8"]
+[ext_resource type="Texture2D" uid="uid://cou2g4ah3nk0p" path="res://scenes/second_level/health_01.png" id="5_j7kil"]
+[ext_resource type="Texture2D" uid="uid://dun6jnpn0b7qo" path="res://scenes/second_level/health_08.png" id="6_cre6g"]
+[ext_resource type="Texture2D" uid="uid://nslwp8nnvphn" path="res://scenes/second_level/health_02.png" id="6_fs1xf"]
+[ext_resource type="Texture2D" uid="uid://clgbw8hnu01tw" path="res://scenes/second_level/health_03.png" id="7_7dwyt"]
+[ext_resource type="Texture2D" uid="uid://ccfhjamrqe2ut" path="res://scenes/second_level/health_04.png" id="8_jpk4h"]
+[ext_resource type="Texture2D" uid="uid://cy66gtj6ut7ol" path="res://scenes/second_level/health_05.png" id="9_fn3m1"]
+[ext_resource type="Texture2D" uid="uid://b663qdh3hxtie" path="res://scenes/second_level/health_06.png" id="10_7de13"]
+[ext_resource type="Texture2D" uid="uid://dkwtqb8s2ortp" path="res://scenes/second_level/health_07.png" id="11_704gg"]
+[ext_resource type="AudioStream" uid="uid://c51qj1yw5nc7y" path="res://scenes/second_level/cave_level/gaming-sound-effect-hd.mp3" id="15_a02qx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cwmd"]
+bg_color = Color(1, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggl7k"]
+size = Vector2(128, 32.25)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0de3i"]
+bg_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7stba"]
+size = Vector2(128, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thu2r"]
+bg_color = Color(1, 1, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw5e1"]
+size = Vector2(128, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ymmfb"]
+bg_color = Color(0, 0, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d7p4"]
+size = Vector2(128, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1njvj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0xp0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j7kil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fs1xf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7dwyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jpk4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fn3m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7de13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_704gg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cre6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bxqh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y5m7n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fywus"]
+size = Vector2(704, 20)
+
+[node name="DanceGame1" type="Node2D"]
+script = ExtResource("1_hngsc")
+
+[node name="ArrowDetector" type="Node2D" parent="."]
+position = Vector2(544, 536)
+script = ExtResource("1_dkhsa")
+
+[node name="Red" type="Area2D" parent="ArrowDetector"]
+position = Vector2(-288, -88)
+
+[node name="Panel" type="Panel" parent="ArrowDetector/Red"]
+offset_left = -64.0
+offset_top = 32.0
+offset_right = -24.0
+offset_bottom = 72.0
+scale = Vector2(3.2, 0.8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cwmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowDetector/Red"]
+position = Vector2(0, 48)
+shape = SubResource("RectangleShape2D_ggl7k")
+
+[node name="Green" type="Area2D" parent="ArrowDetector"]
+position = Vector2(-96, -88)
+
+[node name="Panel" type="Panel" parent="ArrowDetector/Green"]
+offset_left = -64.0
+offset_top = 32.0
+offset_right = -24.0
+offset_bottom = 72.0
+scale = Vector2(3.2, 0.8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_0de3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowDetector/Green"]
+position = Vector2(0, 48)
+shape = SubResource("RectangleShape2D_7stba")
+
+[node name="Yellow" type="Area2D" parent="ArrowDetector"]
+position = Vector2(96, -88)
+
+[node name="Panel" type="Panel" parent="ArrowDetector/Yellow"]
+offset_left = -64.0
+offset_top = 32.0
+offset_right = -24.0
+offset_bottom = 72.0
+scale = Vector2(3.2, 0.8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_thu2r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowDetector/Yellow"]
+position = Vector2(0, 48)
+shape = SubResource("RectangleShape2D_kw5e1")
+
+[node name="Blue" type="Area2D" parent="ArrowDetector"]
+position = Vector2(288, -88)
+
+[node name="Panel" type="Panel" parent="ArrowDetector/Blue"]
+offset_left = -64.0
+offset_top = 32.0
+offset_right = -24.0
+offset_bottom = 72.0
+scale = Vector2(3.2, 0.8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ymmfb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowDetector/Blue"]
+position = Vector2(0, 48)
+shape = SubResource("RectangleShape2D_5d7p4")
+
+[node name="ArrowSpawner" parent="." instance=ExtResource("1_fwrkj")]
+
+[node name="SpawnTime" type="Timer" parent="ArrowSpawner"]
+wait_time = 2.0
+autostart = true
+
+[node name="Points" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 312.0
+offset_right = 178.0
+offset_bottom = 335.0
+text = "Nivel de Felicidade:  0%"
+
+[node name="Bar" type="AnimatedSprite2D" parent="."]
+position = Vector2(103.267, 379.84)
+scale = Vector2(2.00323, 1.48)
+sprite_frames = SubResource("SpriteFrames_1njvj")
+
+[node name="ArrowExit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowExit"]
+position = Vector2(544, 544)
+shape = SubResource("RectangleShape2D_fywus")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ArrowExit"]
+stream = ExtResource("15_a02qx")
+pitch_scale = 2.0
+
+[connection signal="area_entered" from="ArrowDetector/Red" to="ArrowDetector" method="_on_red_area_entered"]
+[connection signal="area_exited" from="ArrowDetector/Red" to="ArrowDetector" method="_on_red_area_exited"]
+[connection signal="area_entered" from="ArrowDetector/Green" to="ArrowDetector" method="_on_green_area_entered"]
+[connection signal="area_exited" from="ArrowDetector/Green" to="ArrowDetector" method="_on_green_area_exited"]
+[connection signal="area_entered" from="ArrowDetector/Yellow" to="ArrowDetector" method="_on_yellow_area_entered"]
+[connection signal="area_exited" from="ArrowDetector/Yellow" to="ArrowDetector" method="_on_yellow_area_exited"]
+[connection signal="area_entered" from="ArrowDetector/Blue" to="ArrowDetector" method="_on_blue_area_entered"]
+[connection signal="area_exited" from="ArrowDetector/Blue" to="ArrowDetector" method="_on_blue_area_exited"]
+[connection signal="point" from="ArrowSpawner" to="." method="_on_arrow_spawner_point"]
+[connection signal="timeout" from="ArrowSpawner/SpawnTime" to="ArrowSpawner" method="_on_spawn_time_timeout"]
+[connection signal="area_entered" from="ArrowExit" to="." method="_on_arrow_exit_area_entered"]

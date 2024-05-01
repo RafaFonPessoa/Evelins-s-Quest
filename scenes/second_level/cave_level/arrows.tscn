@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dal6a40wdjero"]
+
+[ext_resource type="Script" path="res://scenes/second_level/cave_level/Arrows.gd" id="1_8dkyp"]
+[ext_resource type="Texture2D" uid="uid://b3ja5q0n6uw3n" path="res://scenes/farm_level/redArrow.png" id="2_p7bme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43bdd"]
+
+[node name="Arrows" type="Area2D" groups=["arrows"]]
+position = Vector2(256, 64)
+script = ExtResource("1_8dkyp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p7bme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_43bdd")

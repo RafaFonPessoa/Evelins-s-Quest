@@ -1,0 +1,197 @@
+[gd_scene load_steps=23 format=3 uid="uid://b3jxlmxua8ixt"]
+
+[ext_resource type="Script" path="res://scenes/farm_level/simon.gd" id="1_cdk20"]
+[ext_resource type="Texture2D" uid="uid://b67qqrq3jli8r" path="res://scenes/farm_level/cropped-background_farm-pixelicious.png" id="2_pv8pk"]
+[ext_resource type="Texture2D" uid="uid://b3ja5q0n6uw3n" path="res://scenes/farm_level/redArrow.png" id="3_4cj8a"]
+[ext_resource type="Texture2D" uid="uid://j7bim2qdr2ko" path="res://scenes/farm_level/greenArrow.png" id="4_2j0d6"]
+[ext_resource type="Texture2D" uid="uid://p8q25tshkblr" path="res://scenes/farm_level/blueArrow.png" id="5_s820p"]
+[ext_resource type="AudioStream" uid="uid://dwxqvh2ng8hmw" path="res://scenes/farm_level/Red.wav" id="6_8acq7"]
+[ext_resource type="FontFile" uid="uid://d3se8245j0mkg" path="res://dialog/Salmon Typewriter 9 Regular.ttf" id="6_k5all"]
+[ext_resource type="AudioStream" uid="uid://d0iombtqju6y" path="res://scenes/farm_level/Blue.wav" id="7_6c6wc"]
+[ext_resource type="AudioStream" uid="uid://b6wby6aslvgx6" path="res://scenes/farm_level/Green.wav" id="8_8jvxc"]
+[ext_resource type="Texture2D" uid="uid://ygmw5m6rfmck" path="res://dialog/panel-028.png" id="10_be5em"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xu3h"]
+texture = ExtResource("3_4cj8a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s3k40"]
+texture = ExtResource("3_4cj8a")
+modulate_color = Color(1, 1, 1, 0.745098)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k45e5"]
+texture = ExtResource("3_4cj8a")
+modulate_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pms3"]
+texture = ExtResource("4_2j0d6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o3o5l"]
+texture = ExtResource("4_2j0d6")
+modulate_color = Color(1, 1, 1, 0.815686)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_581dy"]
+texture = ExtResource("4_2j0d6")
+modulate_color = Color(0.396078, 0.396078, 0.396078, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jvre"]
+texture = ExtResource("5_s820p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g83tb"]
+texture = ExtResource("5_s820p")
+modulate_color = Color(1, 1, 1, 0.698039)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qr8he"]
+texture = ExtResource("5_s820p")
+modulate_color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ptnht"]
+texture = ExtResource("10_be5em")
+
+[sub_resource type="Theme" id="Theme_46tfc"]
+default_font = ExtResource("6_k5all")
+
+[sub_resource type="Theme" id="Theme_881ui"]
+default_font = ExtResource("6_k5all")
+
+[node name="Simon" type="Node2D"]
+script = ExtResource("1_cdk20")
+
+[node name="Cropped-backgroundFarm-pixelicious" type="Sprite2D" parent="."]
+position = Vector2(581.371, 326.25)
+scale = Vector2(4.54196, 4.54196)
+texture = ExtResource("2_pv8pk")
+
+[node name="Red" type="Button" parent="."]
+offset_left = 193.0
+offset_top = 433.0
+offset_right = 249.0
+offset_bottom = 488.0
+scale = Vector2(4.21962, 3.04)
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xu3h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s3k40")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k45e5")
+
+[node name="Green" type="Button" parent="."]
+offset_left = 502.0
+offset_top = 223.0
+offset_right = 558.0
+offset_bottom = 282.0
+scale = Vector2(3, 4)
+theme_override_styles/normal = SubResource("StyleBoxTexture_2pms3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_o3o5l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_581dy")
+
+[node name="Blue" type="Button" parent="."]
+offset_left = 803.0
+offset_top = 445.0
+offset_right = 856.0
+offset_bottom = 499.0
+scale = Vector2(4, 3)
+theme_override_styles/normal = SubResource("StyleBoxTexture_6jvre")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g83tb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qr8he")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 444.0
+offset_top = 495.0
+offset_right = 767.0
+offset_bottom = 565.0
+theme_override_fonts/font = ExtResource("6_k5all")
+theme_override_font_sizes/font_size = 25
+text = "OLHE ATENTAMENTE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 503.0
+offset_top = 120.0
+offset_right = 674.0
+offset_bottom = 190.0
+theme_override_fonts/font = ExtResource("6_k5all")
+theme_override_font_sizes/font_size = 25
+text = "Rodada: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RedButton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_8acq7")
+
+[node name="BlueButton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_6c6wc")
+
+[node name="GreenButton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_8jvxc")
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+offset_left = 308.0
+offset_top = 79.0
+offset_right = 851.0
+offset_bottom = 600.0
+color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[node name="Reset" type="Button" parent="GameOver"]
+offset_left = 430.0
+offset_top = 440.0
+offset_right = 715.0
+offset_bottom = 533.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_k5all")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ptnht")
+text = "Tentar Novamente"
+
+[node name="Label" type="RichTextLabel" parent="GameOver"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.5
+offset_top = -158.0
+offset_right = 248.5
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme = SubResource("Theme_46tfc")
+theme_override_font_sizes/normal_font_size = 30
+text = "   
+   Você se perdeu! 
+
+   Tente novamente!"
+
+[node name="Tutorial" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial"]
+offset_left = 308.0
+offset_top = 79.0
+offset_right = 851.0
+offset_bottom = 600.0
+color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[node name="Button" type="Button" parent="Tutorial"]
+offset_left = 536.0
+offset_top = 514.0
+offset_right = 613.0
+offset_bottom = 545.0
+text = "Começar
+"
+
+[node name="Label" type="RichTextLabel" parent="Tutorial"]
+offset_left = 336.0
+offset_top = 114.0
+offset_right = 833.0
+offset_bottom = 430.0
+theme = SubResource("Theme_881ui")
+text = "Hope Bringer deve seguir e caminho e evitar se perder, aperte as setas coloridas na ordem correta para poder sair da floresta. 
+(Objetivo é passar do round 5)
+
+*Espere os botões terminarem de brilha para poder apertar eles!*"
+
+[connection signal="pressed" from="Red" to="." method="_on_red_pressed"]
+[connection signal="pressed" from="Green" to="." method="_on_green_pressed"]
+[connection signal="pressed" from="Blue" to="." method="_on_blue_pressed"]
+[connection signal="pressed" from="GameOver/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Tutorial/Button" to="." method="_on_button_pressed"]

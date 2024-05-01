@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlhvyuqs88yki"]
+
+[ext_resource type="Script" path="res://scenes/second_level/cave_level/arrow_spawner.gd" id="1_tsx1y"]
+
+[node name="ArrowSpawner" type="Node2D"]
+script = ExtResource("1_tsx1y")
+
+[node name="Red" type="Marker2D" parent="."]
+position = Vector2(256, 0)
+
+[node name="Green" type="Marker2D" parent="."]
+position = Vector2(448, 0)
+
+[node name="Blue" type="Marker2D" parent="."]
+position = Vector2(832, 0)
+
+[node name="Yellow" type="Marker2D" parent="."]
+position = Vector2(640, 0)

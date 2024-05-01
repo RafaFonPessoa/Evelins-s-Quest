@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnp0jbr587eyi"]
+
+[ext_resource type="Script" path="res://scenes/third_level/war_planet/mineField.gd" id="1_kly7b"]
+[ext_resource type="Texture2D" uid="uid://ddtjfaebtwpel" path="res://scenes/third_level/war_planet/minesweeper.png" id="1_p81vy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mx27c"]
+texture = ExtResource("1_p81vy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ixmhj"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_mx27c")
+
+[node name="MineField" type="Node2D"]
+script = ExtResource("1_kly7b")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ixmhj")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "Mines"
+layer_1/name = "Numbers"
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "Grass"
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "Flags"
+layer_3/tile_data = PackedInt32Array()
+layer_4/name = "Hover"
+layer_4/tile_data = PackedInt32Array()

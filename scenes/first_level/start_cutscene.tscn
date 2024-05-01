@@ -1,0 +1,124 @@
+[gd_scene load_steps=15 format=3 uid="uid://b52qye0rua68v"]
+
+[ext_resource type="Texture2D" uid="uid://dvvq3y8fkjalf" path="res://Space Background(2).png" id="1_1rj48"]
+[ext_resource type="Script" path="res://scripts/first_level/start_cutscene.gd" id="1_gv8cs"]
+[ext_resource type="Texture2D" uid="uid://dbwqrasas1f17" path="res://sprites/Evelin.png" id="2_gtqal"]
+[ext_resource type="Texture2D" uid="uid://da8fd7vxne5c1" path="res://sprites/player/_Roll.png" id="3_4hul2"]
+[ext_resource type="AudioStream" uid="uid://b83bgl65uf031" path="res://scenes/first_level/Ambientação_do_Sonho.ogg" id="5_wrsno"]
+[ext_resource type="AudioStream" uid="uid://ce0ybbmwcwqlj" path="res://dialog/Ultima_Fala_do_Mago(Transição).ogg" id="6_iqwhg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ers35"]
+atlas = ExtResource("3_4hul2")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv5ty"]
+atlas = ExtResource("3_4hul2")
+region = Rect2(240, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n33oo"]
+atlas = ExtResource("3_4hul2")
+region = Rect2(360, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwbrn"]
+atlas = ExtResource("3_4hul2")
+region = Rect2(480, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5c71"]
+atlas = ExtResource("3_4hul2")
+region = Rect2(600, 0, 120, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2qlb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ers35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv5ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n33oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwbrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5c71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5c71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwbrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n33oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv5ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ers35")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_6awcb"]
+resource_name = "cutscene"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(358, 284), Vector2(300, 240), Vector2(280, 300), Vector2(300, 310), Vector2(358, 284)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l3qfk"]
+_data = {
+"cutscene": SubResource("Animation_6awcb")
+}
+
+[node name="StartCutscene" type="Node2D" node_paths=PackedStringArray("hud")]
+script = ExtResource("1_gv8cs")
+hud = NodePath("Hud")
+
+[node name="SpaceBackground(2)" type="Sprite2D" parent="."]
+position = Vector2(622, 431.5)
+scale = Vector2(6.59, 4.325)
+texture = ExtResource("1_1rj48")
+
+[node name="Evelin" type="Sprite2D" parent="."]
+position = Vector2(736.25, 365.608)
+scale = Vector2(2.79851, 2.79851)
+texture = ExtResource("2_gtqal")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(358, 284)
+scale = Vector2(1.825, 1.825)
+sprite_frames = SubResource("SpriteFrames_f2qlb")
+autoplay = "default"
+frame_progress = 0.287823
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l3qfk")
+}
+autoplay = "cutscene"
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="Backtrack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_wrsno")
+autoplay = true
+
+[node name="Deusa" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_iqwhg")
