@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://df565w1v1ymwb"]
+[gd_scene load_steps=9 format=3 uid="uid://df565w1v1ymwb"]
 
 [ext_resource type="Script" path="res://RocketAnimation.gd" id="1_i8q4j"]
 [ext_resource type="Texture2D" uid="uid://b37jds0myyrts" path="res://scenes/TransiçãoBackground.png" id="2_o3ub6"]
 [ext_resource type="Texture2D" uid="uid://dwgc7i74ngepy" path="res://scenes/farm_level/Rocket-pixelicious (1).png" id="3_vxqhw"]
 [ext_resource type="AudioStream" uid="uid://ikxu2tfbbv6u" path="res://scenes/Rocket/Foguete.wav" id="4_rjp03"]
+[ext_resource type="Texture2D" uid="uid://ca5issd76jndf" path="res://scenes/Rocket/OIG3-pixelicious-removebg-preview (1).png" id="5_gaal5"]
 [ext_resource type="Texture2D" uid="uid://prdvagivro52" path="res://scenes/castle-removebg-preview.png" id="5_t62a4"]
 
 [sub_resource type="Animation" id="Animation_obsue"]
@@ -57,6 +58,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(132, 370), Vector2(352, 376), Vector2(550, 372), Vector2(1107, 381)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RockPlanet:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2.19531, 2.19531)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FarmPlanet:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2.40625, 2.40625)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_khjhn"]
 _data = {
@@ -67,7 +92,7 @@ _data = {
 script = ExtResource("1_i8q4j")
 
 [node name="TransiçãoBackground" type="Sprite2D" parent="."]
-position = Vector2(474, 403)
+position = Vector2(800, 401)
 texture = ExtResource("2_o3ub6")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -75,12 +100,15 @@ stream = ExtResource("4_rjp03")
 autoplay = true
 
 [node name="Castle-removebg-preview" type="Sprite2D" parent="."]
-position = Vector2(164, 153)
-scale = Vector2(0.334711, 0.334711)
+position = Vector2(395, 298)
 texture = ExtResource("5_t62a4")
 
+[node name="FarmPlanet" type="Sprite2D" parent="."]
+position = Vector2(1036.5, 465.5)
+texture = ExtResource("5_gaal5")
+
 [node name="Rocket-pixelicious(1)" type="Sprite2D" parent="."]
-position = Vector2(1107, 381)
+position = Vector2(132, 370)
 rotation = 1.5708
 texture = ExtResource("3_vxqhw")
 
