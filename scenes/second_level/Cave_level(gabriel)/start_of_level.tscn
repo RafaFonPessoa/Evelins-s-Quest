@@ -987,7 +987,7 @@ stream = ExtResource("6_leiae")
 position = Vector2(360, -155)
 sprite_frames = SubResource("SpriteFrames_goyxp")
 autoplay = "default"
-frame_progress = 0.0293335
+frame_progress = 0.0838439
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
 position = Vector2(360, -155)
