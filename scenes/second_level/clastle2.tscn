@@ -212,6 +212,7 @@ position = Vector2(385, 147)
 scale = Vector2(0.492105, 0.492105)
 sprite_frames = SubResource("SpriteFrames_8k8mi")
 autoplay = "default"
+frame_progress = 0.567232
 flip_h = true
 
 [node name="Player" parent="." instance=ExtResource("8_x2ef2")]
