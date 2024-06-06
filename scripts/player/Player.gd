@@ -24,6 +24,7 @@ func player_moviment(delta):
 	if on_dialog:
 		velocity.x = 0
 		sprite.play("idle")
+		walk_effect.stop()
 		return
 	
 	# Handle jump.

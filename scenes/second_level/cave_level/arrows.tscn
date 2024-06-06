@@ -1,9 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://dal6a40wdjero"]
+[gd_scene load_steps=12 format=3 uid="uid://dal6a40wdjero"]
 
 [ext_resource type="Script" path="res://scenes/second_level/cave_level/Arrows.gd" id="1_8dkyp"]
 [ext_resource type="Texture2D" uid="uid://b3ja5q0n6uw3n" path="res://scenes/farm_level/redArrow.png" id="2_p7bme"]
+[ext_resource type="Texture2D" uid="uid://bu1bqhrpnicsr" path="res://sprites/Sparks-Sheet.png" id="3_76h37"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43bdd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iy36"]
+atlas = ExtResource("3_76h37")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty4hq"]
+atlas = ExtResource("3_76h37")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aedg0"]
+atlas = ExtResource("3_76h37")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykhjf"]
+atlas = ExtResource("3_76h37")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f5jf"]
+atlas = ExtResource("3_76h37")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6att"]
+atlas = ExtResource("3_76h37")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o7drx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iy36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty4hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aedg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykhjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0f5jf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6att")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 12.0
+}]
 
 [node name="Arrows" type="Area2D" groups=["arrows"]]
 position = Vector2(256, 64)
@@ -14,3 +65,14 @@ texture = ExtResource("2_p7bme")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_43bdd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(24, -16)
+sprite_frames = SubResource("SpriteFrames_o7drx")
+animation = &"fire"
+frame = 5
+frame_progress = 1.0
+
+[connection signal="point" from="." to="." method="_on_point"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

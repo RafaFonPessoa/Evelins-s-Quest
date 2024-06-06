@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cm3dwm3cpd7d5"]
+[gd_scene load_steps=25 format=3 uid="uid://cm3dwm3cpd7d5"]
 
 [ext_resource type="PackedScene" uid="uid://b0xm6l8m4snaa" path="res://scenes/player.tscn" id="1_3e8yu"]
 [ext_resource type="Texture2D" uid="uid://deysd3lp722fn" path="res://scenes/second_level/Cave_level(gabriel)/assets/Gray_Tile_Terrain (16 x 16).png" id="1_fh1an"]
@@ -947,8 +947,12 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="StartOfLevel" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2nx3"]
+size = Vector2(44.875, 45)
+
+[node name="StartOfLevel" type="Node2D" node_paths=PackedStringArray("hud")]
 script = ExtResource("1_uw8qj")
+hud = NodePath("Hud")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 1)
@@ -1002,4 +1006,14 @@ sprite_frames = SubResource("SpriteFrames_goyxp")
 autoplay = "default"
 frame_progress = 0.525871
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(559, -39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(120.563, 51.5)
+shape = SubResource("RectangleShape2D_f2nx3")
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
 [connection signal="screen_exited" from="Player/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

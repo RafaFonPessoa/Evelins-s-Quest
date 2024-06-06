@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://n30phe3wc7lp"]
+[gd_scene load_steps=56 format=3 uid="uid://n30phe3wc7lp"]
 
 [ext_resource type="Script" path="res://scenes/second_level/cave_level/ArrowDetector.gd" id="1_dkhsa"]
 [ext_resource type="PackedScene" uid="uid://dlhvyuqs88yki" path="res://scenes/second_level/cave_level/arrow_spawner.tscn" id="1_fwrkj"]
 [ext_resource type="Script" path="res://scenes/second_level/cave_level/dance_game1.gd" id="1_hngsc"]
+[ext_resource type="Texture2D" uid="uid://d232elikoq7yk" path="res://scenes/second_level/cave_level/d2af7f5c4b4deeffc2ce9836d29e39a0-pixelicious.png" id="2_wj7d5"]
 [ext_resource type="Texture2D" uid="uid://cuugwohnfontj" path="res://scenes/second_level/health_00.png" id="4_0xp0m"]
 [ext_resource type="Texture2D" uid="uid://cgmfl2eigp1v3" path="res://scenes/second_level/health_10.png" id="4_y5m7n"]
 [ext_resource type="Texture2D" uid="uid://b81paimbxvawe" path="res://scenes/second_level/health_09.png" id="5_bxqh8"]
@@ -15,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://b663qdh3hxtie" path="res://scenes/second_level/health_06.png" id="10_7de13"]
 [ext_resource type="Texture2D" uid="uid://dkwtqb8s2ortp" path="res://scenes/second_level/health_07.png" id="11_704gg"]
 [ext_resource type="AudioStream" uid="uid://c51qj1yw5nc7y" path="res://scenes/second_level/cave_level/gaming-sound-effect-hd.mp3" id="15_a02qx"]
+[ext_resource type="Shader" path="res://scenes/second_level/cave_level/dance_game1.gdshader" id="17_gffi4"]
+[ext_resource type="AudioStream" uid="uid://c4hv4ngitee3u" path="res://scenes/second_level/cave_level/La-Danse-du-Gobelet-en-Papier-_Dedusmulns-Theme_-_TubeRipper.com_.wav" id="17_h3dgv"]
+[ext_resource type="FontFile" uid="uid://d3se8245j0mkg" path="res://dialog/Salmon Typewriter 9 Regular.ttf" id="18_yr720"]
+[ext_resource type="Texture2D" uid="uid://ygmw5m6rfmck" path="res://dialog/panel-028.png" id="19_h1tkc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cwmd"]
 bg_color = Color(1, 0, 0, 1)
@@ -27,7 +32,7 @@ corner_radius_bottom_left = 5
 anti_aliasing = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ggl7k"]
-size = Vector2(128, 32.25)
+size = Vector2(128, 48.125)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0de3i"]
 bg_color = Color(0, 1, 0, 1)
@@ -38,7 +43,7 @@ corner_radius_bottom_left = 5
 anti_aliasing = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7stba"]
-size = Vector2(128, 32)
+size = Vector2(128, 48)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thu2r"]
 bg_color = Color(1, 1, 0, 1)
@@ -49,7 +54,7 @@ corner_radius_bottom_left = 5
 anti_aliasing = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw5e1"]
-size = Vector2(128, 32)
+size = Vector2(128, 48)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ymmfb"]
 bg_color = Color(0, 0, 1, 1)
@@ -60,7 +65,7 @@ corner_radius_bottom_left = 5
 anti_aliasing = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5d7p4"]
-size = Vector2(128, 32)
+size = Vector2(128, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1njvj"]
 animations = [{
@@ -106,8 +111,206 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fywus"]
 size = Vector2(704, 20)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uswvm"]
+shader = ExtResource("17_gffi4")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vy2r6"]
+load_path = "res://.godot/imported/Bringer-of-Death_Hurt_1.png-3a97840be2ae84f64a0c0a6483936d1d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rpomd"]
+load_path = "res://.godot/imported/Bringer-of-Death_Hurt_2.png-eee930239fa7c8f272876dbb9b3c3060.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xfipa"]
+load_path = "res://.godot/imported/Bringer-of-Death_Hurt_3.png-dbad332925e7c2f252b57b20cb6b8db0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2sxwb"]
+load_path = "res://.godot/imported/Bringer-of-Death_Cast_1.png-cebe8a2172c549a25c7a452e6541ee97.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p7cgv"]
+load_path = "res://.godot/imported/Bringer-of-Death_Cast_2.png-14c79326d9e5ccede4b404324e9d5e8b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_chdt7"]
+load_path = "res://.godot/imported/Bringer-of-Death_Cast_3.png-9f7b1f91979893fdab4bd6a3f4b54224.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_15b5k"]
+load_path = "res://.godot/imported/Bringer-of-Death_Cast_4.png-74d9ea8eb19fe47f97cfd87d8d1d789f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k12fw"]
+load_path = "res://.godot/imported/Bringer-of-Death_Cast_5.png-178e11fd56f1def89f8d8a7d888b2a8b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cpb5s"]
+load_path = "res://.godot/imported/Bringer-of-Death_Cast_6.png-86c4b7c16593435966e55d84b34a7afb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r24gd"]
+load_path = "res://.godot/imported/Bringer-of-Death_Cast_7.png-84ee75f400021cb904731cd28980b1af.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yggsy"]
+load_path = "res://.godot/imported/Bringer-of-Death_Cast_8.png-ae3b55adf20621f56ebb818699395bde.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p1r7h"]
+load_path = "res://.godot/imported/Bringer-of-Death_Cast_9.png-17d82b66b90746c3bcea0ce88b15a29c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8hsur"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_1.png-0e77210c1fdcb42568c35e5fff1a2626.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_al7ko"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_2.png-161f55a8eaeff2953e6d088a002c1183.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_amorm"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_3.png-51858a15357ef126e8bd64673c584ce0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wpl0f"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_4.png-2997759079958a3e11edc27e11587f1b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uc3v0"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_5.png-fd19e7b37edb64f3773e0b60f6cf4655.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0ggkq"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_6.png-009e5c3ab3a86897a0ec007411f76df5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hgun6"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_7.png-b1dbe2b35538b6d3f67f5ef74e76f6a1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2gaio"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_8.png-8533e778a75018dc1ed204d8c9474c91.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbweo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_vy2r6")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_rpomd")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_xfipa")
+}],
+"loop": true,
+"name": &"Dance",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_2sxwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_p7cgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_chdt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_15b5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_k12fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_cpb5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_r24gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_yggsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_p1r7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_8hsur")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_al7ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_amorm")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_wpl0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_uc3v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_0ggkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_hgun6")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_2gaio")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_vy2r6")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_rpomd")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_xfipa")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_vy2r6")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_rpomd")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_xfipa")
+}],
+"loop": true,
+"name": &"Dance2",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_8hsur")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_al7ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_amorm")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_wpl0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_uc3v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_0ggkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_hgun6")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_2gaio")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_24oot"]
+texture = ExtResource("19_h1tkc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_884to"]
+texture = ExtResource("19_h1tkc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gfhtv"]
+texture = ExtResource("19_h1tkc")
+modulate_color = Color(1, 1, 1, 0.694118)
+
 [node name="DanceGame1" type="Node2D"]
 script = ExtResource("1_hngsc")
+
+[node name="D2Af7f5c4b4Deeffc2Ce9836d29e39a0-pixelicious" type="Sprite2D" parent="."]
+position = Vector2(640, 355.875)
+scale = Vector2(2.48438, 2.53571)
+texture = ExtResource("2_wj7d5")
 
 [node name="ArrowDetector" type="Node2D" parent="."]
 position = Vector2(544, 536)
@@ -118,14 +321,14 @@ position = Vector2(-288, -88)
 
 [node name="Panel" type="Panel" parent="ArrowDetector/Red"]
 offset_left = -64.0
-offset_top = 32.0
+offset_top = 16.0
 offset_right = -24.0
-offset_bottom = 72.0
+offset_bottom = 76.0
 scale = Vector2(3.2, 0.8)
 theme_override_styles/panel = SubResource("StyleBoxFlat_0cwmd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowDetector/Red"]
-position = Vector2(0, 48)
+position = Vector2(0, 40.0625)
 shape = SubResource("RectangleShape2D_ggl7k")
 
 [node name="Green" type="Area2D" parent="ArrowDetector"]
@@ -133,14 +336,14 @@ position = Vector2(-96, -88)
 
 [node name="Panel" type="Panel" parent="ArrowDetector/Green"]
 offset_left = -64.0
-offset_top = 32.0
+offset_top = 16.0
 offset_right = -24.0
-offset_bottom = 72.0
+offset_bottom = 76.0
 scale = Vector2(3.2, 0.8)
 theme_override_styles/panel = SubResource("StyleBoxFlat_0de3i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowDetector/Green"]
-position = Vector2(0, 48)
+position = Vector2(0, 40)
 shape = SubResource("RectangleShape2D_7stba")
 
 [node name="Yellow" type="Area2D" parent="ArrowDetector"]
@@ -148,14 +351,14 @@ position = Vector2(96, -88)
 
 [node name="Panel" type="Panel" parent="ArrowDetector/Yellow"]
 offset_left = -64.0
-offset_top = 32.0
+offset_top = 16.0
 offset_right = -24.0
-offset_bottom = 72.0
+offset_bottom = 76.0
 scale = Vector2(3.2, 0.8)
 theme_override_styles/panel = SubResource("StyleBoxFlat_thu2r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowDetector/Yellow"]
-position = Vector2(0, 48)
+position = Vector2(0, 40)
 shape = SubResource("RectangleShape2D_kw5e1")
 
 [node name="Blue" type="Area2D" parent="ArrowDetector"]
@@ -163,14 +366,14 @@ position = Vector2(288, -88)
 
 [node name="Panel" type="Panel" parent="ArrowDetector/Blue"]
 offset_left = -64.0
-offset_top = 32.0
+offset_top = 16.0
 offset_right = -24.0
-offset_bottom = 72.0
+offset_bottom = 76.0
 scale = Vector2(3.2, 0.8)
 theme_override_styles/panel = SubResource("StyleBoxFlat_ymmfb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowDetector/Blue"]
-position = Vector2(0, 48)
+position = Vector2(0, 40)
 shape = SubResource("RectangleShape2D_5d7p4")
 
 [node name="ArrowSpawner" parent="." instance=ExtResource("1_fwrkj")]
@@ -180,14 +383,14 @@ wait_time = 2.0
 autostart = true
 
 [node name="Points" type="Label" parent="."]
-offset_left = 16.0
-offset_top = 312.0
-offset_right = 178.0
-offset_bottom = 335.0
+offset_left = 1011.88
+offset_top = 208.0
+offset_right = 1191.88
+offset_bottom = 231.0
 text = "Nivel de Felicidade:  0%"
 
 [node name="Bar" type="AnimatedSprite2D" parent="."]
-position = Vector2(103.267, 379.84)
+position = Vector2(1099.15, 275.84)
 scale = Vector2(2.00323, 1.48)
 sprite_frames = SubResource("SpriteFrames_1njvj")
 
@@ -201,6 +404,66 @@ shape = SubResource("RectangleShape2D_fywus")
 stream = ExtResource("15_a02qx")
 pitch_scale = 2.0
 
+[node name="DanceKeeper" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_uswvm")
+position = Vector2(1024, 344)
+scale = Vector2(2.39247, 2.39247)
+sprite_frames = SubResource("SpriteFrames_cbweo")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.210463
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_h3dgv")
+volume_db = 10.0
+pitch_scale = 1.2
+autoplay = true
+
+[node name="GameOver" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -232.0
+offset_right = 240.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameOver"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 144.0
+offset_right = 848.0
+offset_bottom = 408.0
+theme_override_fonts/normal_font = ExtResource("18_yr720")
+theme_override_font_sizes/normal_font_size = 19
+text = "Silencius cruzou os braços e fez uma careta. Sua dança foi tão desajeitada que até as plantas murcharam. Ele olhou para você com uma sobrancelha levantada e disse: ‘Bem, pelo menos eu danço melhor que você!’."
+
+[node name="Button" type="Button" parent="GameOver"]
+offset_left = 480.0
+offset_top = 400.0
+offset_right = 824.0
+offset_bottom = 499.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("18_yr720")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_24oot")
+theme_override_styles/hover = SubResource("StyleBoxTexture_884to")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gfhtv")
+action_mode = 0
+text = "Tentar Novamente"
+
 [connection signal="area_entered" from="ArrowDetector/Red" to="ArrowDetector" method="_on_red_area_entered"]
 [connection signal="area_exited" from="ArrowDetector/Red" to="ArrowDetector" method="_on_red_area_exited"]
 [connection signal="area_entered" from="ArrowDetector/Green" to="ArrowDetector" method="_on_green_area_entered"]
@@ -212,3 +475,4 @@ pitch_scale = 2.0
 [connection signal="point" from="ArrowSpawner" to="." method="_on_arrow_spawner_point"]
 [connection signal="timeout" from="ArrowSpawner/SpawnTime" to="ArrowSpawner" method="_on_spawn_time_timeout"]
 [connection signal="area_entered" from="ArrowExit" to="." method="_on_arrow_exit_area_entered"]
+[connection signal="pressed" from="GameOver/Button" to="." method="_on_button_pressed"]
