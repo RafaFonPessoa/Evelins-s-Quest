@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://pvru1eydqoec"]
+
+[ext_resource type="Script" path="res://scenes/third_level/HopeRunner/main.gd" id="1_37y3g"]
+[ext_resource type="PackedScene" uid="uid://dypuhbijup4d7" path="res://scenes/third_level/HopeRunner/bg.tscn" id="1_lj1j8"]
+[ext_resource type="PackedScene" uid="uid://b5pwnh1tmyrnl" path="res://scenes/third_level/HopeRunner/ground.tscn" id="2_5eus6"]
+[ext_resource type="PackedScene" uid="uid://df72fq528xn3i" path="res://scenes/playerHopeRun.tscn" id="3_p6gnk"]
+[ext_resource type="PackedScene" uid="uid://lotwuige1aee" path="res://scenes/third_level/HopeRunner/game_over.tscn" id="5_emdgf"]
+[ext_resource type="PackedScene" uid="uid://lyf4a3sklk1o" path="res://scenes/third_level/HopeRunner/hud.tscn" id="6_b7pqm"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_37y3g")
+
+[node name="Bg" parent="." instance=ExtResource("1_lj1j8")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(131, 436)
+zoom = Vector2(1.2, 1.2)
+limit_left = 0
+limit_top = 0
+
+[node name="Player" parent="." instance=ExtResource("3_p6gnk")]
+position = Vector2(183, 700)
+scale = Vector2(3, 3)
+
+[node name="GameOver" parent="." instance=ExtResource("5_emdgf")]
+process_mode = 2
+
+[node name="HUD" parent="." instance=ExtResource("6_b7pqm")]
+
+[node name="Ground" parent="." instance=ExtResource("2_5eus6")]

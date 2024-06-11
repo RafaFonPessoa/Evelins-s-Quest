@@ -4,12 +4,12 @@ const _DIALOG_SCREEN : PackedScene = preload("res://dialog/dialog_screen.tscn")
 
 var _dialog_data1 : Dictionary = {
 	0: {
-		"faceset": "res://sprites/faceset/DanceCreature.jpeg",
+		"faceset": "res://sprites/faceset/danceCreature.jpg",
 		"dialog": "Olá estranho,bem vindo a cidade da dança",
 		"title": "Dance Creature",
 	},
 	1: {
-		"faceset": "res://sprites/faceset/DanceCreature.jpeg",
+		"faceset": "res://sprites/faceset/danceCreature.jpg",
 		"dialog": "A cidade onde todos se comunicam dançando",
 		"title": "Dance Creature",
 	},
@@ -19,7 +19,7 @@ var _dialog_data1 : Dictionary = {
 		"title": "Hope Bringer",
 	},
 	3: {
-		"faceset": "res://sprites/faceset/DanceCreature.jpeg",
+		"faceset": "res://sprites/faceset/danceCreature.jpg",
 		"dialog": "ta duvidando?se liga no gingado do pai",
 		"title": "Dance Creature",
 	},
@@ -58,3 +58,10 @@ func _on_area_2d_body_entered(body):
 		
 		$Player.on_dialog = false
 		$Area2D.queue_free()
+
+
+func _on_exit_body_entered(area):
+	if area.is_in_group("player"):
+		TransitionScreen._fade_transition()
+		await get_tree().create_timer(1).timeout
+		get_tree().change_scene_to_file("res://scenes/second_level/Cave_level(gabriel)/second_scene.tscn")

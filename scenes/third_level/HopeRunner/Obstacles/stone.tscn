@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://drtyfbxlwd1x4"]
+
+[ext_resource type="Texture2D" uid="uid://dr7wntnbryafv" path="res://scenes/third_level/HopeRunner/Obstacles/1.png" id="1_3gx2r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8h0j3"]
+radius = 83.0963
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7.5, -89.5)
+scale = Vector2(3, 3)
+texture = ExtResource("1_3gx2r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, -74)
+shape = SubResource("CircleShape2D_8h0j3")

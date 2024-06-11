@@ -6,7 +6,8 @@ void vertex() {
 
 void fragment(){
   COLOR = texture(TEXTURE, UV); // Read from texture again.
-  COLOR.r = 0.6; //set blue channel to 1.0
+  COLOR.r = 0.5; //set blue channel to 1.0
+  COLOR.g = 0.5; //set blue channel to 1.0
 }
 
 //void light() {

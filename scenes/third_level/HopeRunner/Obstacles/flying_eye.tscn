@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://c5p2ix03wl7s6"]
+
+[ext_resource type="Texture2D" uid="uid://cbidd6wnaxgvi" path="res://scenes/third_level/HopeRunner/Obstacles/Flight.png" id="1_8r84d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5k58"]
+atlas = ExtResource("1_8r84d")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrqdv"]
+atlas = ExtResource("1_8r84d")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2x5b"]
+atlas = ExtResource("1_8r84d")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckomg"]
+atlas = ExtResource("1_8r84d")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t2na"]
+atlas = ExtResource("1_8r84d")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr6w3"]
+atlas = ExtResource("1_8r84d")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lov7p"]
+atlas = ExtResource("1_8r84d")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me4qv"]
+atlas = ExtResource("1_8r84d")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_djhcl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5k58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrqdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2x5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckomg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t2na")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr6w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lov7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me4qv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7ov4"]
+size = Vector2(17.3333, 16)
+
+[node name="FlyingEye" type="Area2D"]
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_djhcl")
+autoplay = "default"
+frame_progress = 0.669095
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.33333, 2)
+shape = SubResource("RectangleShape2D_p7ov4")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5pwnh1tmyrnl"]
+
+[ext_resource type="Texture2D" uid="uid://btkpqjdbfvbw1" path="res://scenes/third_level/ground.png" id="1_iajas"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_te2nw"]
+size = Vector2(4115, 97)
+
+[node name="Ground" type="StaticBody2D"]
+position = Vector2(0, 141)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 552)
+scale = Vector2(1.78203, 1.16129)
+texture = ExtResource("1_iajas")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2057.5, 599.5)
+shape = SubResource("RectangleShape2D_te2nw")

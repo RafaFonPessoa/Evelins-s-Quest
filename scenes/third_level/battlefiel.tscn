@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://de6211mc8bjq"]
+
+[ext_resource type="PackedScene" uid="uid://b0xm6l8m4snaa" path="res://scenes/player.tscn" id="1_r3gtg"]
+
+[node name="Battlefiel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_r3gtg")]
+position = Vector2(39, 673)
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="Player"]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_bottom = 800
