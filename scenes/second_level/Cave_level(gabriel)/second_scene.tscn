@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://6rhwx1om0lam"]
+[gd_scene load_steps=43 format=3 uid="uid://6rhwx1om0lam"]
 
 [ext_resource type="Script" path="res://scenes/second_level/Cave_level(gabriel)/second_scene.gd" id="1_n53u1"]
 [ext_resource type="Texture2D" uid="uid://deysd3lp722fn" path="res://scenes/second_level/Cave_level(gabriel)/assets/Gray_Tile_Terrain (16 x 16).png" id="2_utn6n"]
@@ -17,7 +17,25 @@
 [ext_resource type="Texture2D" uid="uid://cnedlcp2cj1ah" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_5.png" id="16_6jak1"]
 [ext_resource type="Texture2D" uid="uid://wika6ufl4g7q" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_6.png" id="17_hdkp1"]
 [ext_resource type="Texture2D" uid="uid://bc84vskakdyq" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_7.png" id="18_uvnr5"]
+[ext_resource type="Texture2D" uid="uid://bkinvrx0ja52g" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_10.png" id="19_1j7a4"]
+[ext_resource type="Texture2D" uid="uid://dkjhge62qfyya" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/No Effect Sprites/Cast/Bringer-of-Death_Cast_6.png" id="19_2vibe"]
 [ext_resource type="Texture2D" uid="uid://b5a38ag1iyhvy" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_8.png" id="19_etqj1"]
+[ext_resource type="Texture2D" uid="uid://bomvf5orywjl5" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_9.png" id="20_ttjfj"]
+[ext_resource type="Texture2D" uid="uid://bva14ee6f6nmp" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/No Effect Sprites/Cast/Bringer-of-Death_Cast_7.png" id="20_vf1hw"]
+[ext_resource type="Texture2D" uid="uid://dndyces2qh2ie" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/No Effect Sprites/Cast/Bringer-of-Death_Cast_8.png" id="21_3oy5l"]
+[ext_resource type="Texture2D" uid="uid://c043jic0ts774" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_8.png" id="21_i64ry"]
+[ext_resource type="Texture2D" uid="uid://cayabtoppp2q6" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/No Effect Sprites/Cast/Bringer-of-Death_Cast_9.png" id="22_b806c"]
+[ext_resource type="Texture2D" uid="uid://dookd63nlnxya" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_7.png" id="22_jj4yc"]
+[ext_resource type="Texture2D" uid="uid://cm0p0oyegkr5m" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/No Effect Sprites/Death/Bringer-of-Death_Death_1.png" id="23_vset4"]
+[ext_resource type="Texture2D" uid="uid://cnjl2y5teucj2" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_6.png" id="23_y0pkn"]
+[ext_resource type="Texture2D" uid="uid://cuoduv8qwh60x" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_5.png" id="24_f8wah"]
+[ext_resource type="Texture2D" uid="uid://cfag3mfoy0qq2" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/No Effect Sprites/Death/Bringer-of-Death_Death_2.png" id="24_ixxj7"]
+[ext_resource type="Texture2D" uid="uid://c7jjl3j1qh2vu" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/No Effect Sprites/Death/Bringer-of-Death_Death_3.png" id="25_5y6le"]
+[ext_resource type="Texture2D" uid="uid://byxhgxr81glo7" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_4.png" id="25_exwe3"]
+[ext_resource type="Texture2D" uid="uid://d127x8r0cke1q" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_1.png" id="26_0qbgv"]
+[ext_resource type="Texture2D" uid="uid://dgjysubp0meaq" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/No Effect Sprites/Death/Bringer-of-Death_Death_4.png" id="26_srmwf"]
+[ext_resource type="Texture2D" uid="uid://y4p18yx0ewpg" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/No Effect Sprites/Hurt/Bringer-of-Death_Hurt_2.png" id="27_i7g15"]
+[ext_resource type="Texture2D" uid="uid://t3m55dvkdose" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/No Effect Sprites/Hurt/Bringer-of-Death_Hurt_3.png" id="28_wvi86"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c0kx8"]
 texture = ExtResource("2_utn6n")
@@ -943,7 +961,80 @@ animations = [{
 }],
 "loop": true,
 "name": &"new_animation",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_2vibe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vf1hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vf1hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3oy5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_b806c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vset4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ixxj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5y6le")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_srmwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_i7g15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_wvi86")
+}],
+"loop": true,
+"name": &"new_animation_1",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_1j7a4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ttjfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_i64ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jj4yc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_y0pkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_f8wah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_exwe3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_523ps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f2cgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_0qbgv")
+}],
+"loop": false,
+"name": &"summon",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ng61"]
@@ -989,8 +1080,9 @@ stream = ExtResource("6_psf2h")
 position = Vector2(483, -67)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_goyxp")
-autoplay = "default"
-frame_progress = 0.0838439
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.0955679
 
 [node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
 position = Vector2(1216, -4)
@@ -1000,11 +1092,14 @@ autoplay = "default"
 frame_progress = 0.0838439
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(869, -38)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_goyxp")
-autoplay = "default"
-frame_progress = 0.0838439
+animation = &"summon"
+autoplay = "summon"
+frame = 9
+frame_progress = 1.0
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
 position = Vector2(291, -5)
@@ -1017,16 +1112,18 @@ frame_progress = 0.0838439
 position = Vector2(1180, -68)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_goyxp")
-autoplay = "default"
-frame_progress = 0.0838439
+animation = &"new_animation_1"
+autoplay = "new_animation_1"
+frame_progress = 0.809481
 flip_h = true
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
 position = Vector2(1217, -5)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_goyxp")
-autoplay = "default"
-frame_progress = 0.0838439
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.0955782
 flip_h = true
 
 [node name="exit" type="Area2D" parent="."]

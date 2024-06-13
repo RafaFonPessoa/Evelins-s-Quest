@@ -12,7 +12,7 @@ func _on_arrow_spawner_point():
 
 func _ready():
 	TransitionScreen.hide()
-	new_game()
+	$ArrowSpawner/SpawnTime.stop()
 
 func _physics_process(delta):
 	
@@ -36,11 +36,15 @@ func _physics_process(delta):
 		var arrows = get_tree().get_nodes_in_group("arrows")
 		for i in arrows:
 			i.queue_free()
+		
+		$EndGame.visible = true
+		
 	elif points < 0: #Fail Game
 		$ArrowSpawner/SpawnTime.stop()
 		GameOver.visible = true
 		dance_keeper.visible = false
 		points_label.visible = false
+		bar_level.frame = 0
 		bar_level.visible = false
 		var arrows = get_tree().get_nodes_in_group("arrows")
 		for i in arrows:
@@ -87,3 +91,16 @@ func _on_arrow_exit_area_entered(area):
 
 func _on_button_pressed():
 	new_game()
+
+
+func _on_start_pressed():
+	$StartGame.visible = false
+	new_game()
+
+func _on_continue_pressed():
+	TransitionScreen.show()
+	TransitionScreen._fade_transition()
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_file("res://scenes/second_level/Cave_level(gabriel)/fifth_scene.tscn")
+	
+

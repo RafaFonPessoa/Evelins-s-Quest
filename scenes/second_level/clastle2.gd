@@ -8,7 +8,7 @@ var lv2Door = false
 var _dialog_data : Dictionary = {
 	0: {
 		"faceset": "res://sprites/faceset/GraceGiver.png",
-		"dialog": "Hope Bringer! Estava comentando com a deusa Evelin sobre o castelo, está bem mais iluminado!",
+		"dialog": "Hope Bringer! Estava comentando com a deusa Evelin e como esses jovens Hope Bringers sobre o castelo está bem mais iluminado!",
 		"title": "Grace Giver",
 	},
 	1: {
@@ -23,13 +23,18 @@ var _dialog_data : Dictionary = {
 	},
 	3: {
 		"faceset": "res://sprites/faceset/GraceGiver.png",
-		"dialog": "Esse plaeta é cheio de cavernas, dentro dessas cavernas existe um povos inteligentes.",
+		"dialog": "Esse planeta é cheio de cavernas, dentro dessas cavernas existe um povos inteligentes.",
 		"title": "Grace Giver",
 	},
 	4: {
 		"faceset": "res://sprites/faceset/Evelin.png",
 		"dialog": "Eles se chaman cavernicolas, mas estou sentido uma tristeza enorme vinda de uma só pessoa. Vá Hope Bringer, ajude essa pessoa.",
 		"title": "Evelin, a Deusa da Esperança",
+	},
+	5: {
+		"faceset": "res://sprites/faceset/GraceGiver.png",
+		"dialog": "Não jovens, infelizmente vocês ainda não podem ir com ele.",
+		"title": "Grace Giver",
 	},
 }
 
@@ -53,12 +58,12 @@ func _physics_process(delta):
 	if lv1Door and Input.is_action_pressed("interact"):
 		TransitionScreen._fade_transition()
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://scenes/farm_level/farm.tscn")
+		get_tree().change_scene_to_file("res://scenes/Rocket/rocket_animation.tscn")
 	
 	if lv2Door and Input.is_action_pressed("interact"):
 		TransitionScreen._fade_transition()
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://scenes/second_level/Cave_level(gabriel)/start_of_level.tscn")
+		get_tree().change_scene_to_file("res://scenes/Rocket/rocket_animation2.tscn")
 
 func _on_level_1_body_entered(body):
 	$Level1.visible = true

@@ -78,6 +78,9 @@ func _process(delta):
 		score += speed
 		show_score()
 		
+		if score > 3000:
+			get_tree().change_scene_to_file()
+		
 		#update ground position
 		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
 			$Ground.position.x += screen_size.x

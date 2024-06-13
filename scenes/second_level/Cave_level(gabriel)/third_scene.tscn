@@ -1,26 +1,36 @@
 [gd_scene load_steps=24 format=3 uid="uid://g2nxrl7ou8ge"]
 
-[ext_resource type="Script" path="res://scenes/second_level/Cave_level(gabriel)/third_scene.gd" id="1_4xmmw"]
-[ext_resource type="Texture2D" uid="uid://deysd3lp722fn" path="res://scenes/second_level/Cave_level(gabriel)/assets/Gray_Tile_Terrain (16 x 16).png" id="2_6i68d"]
-[ext_resource type="Texture2D" uid="uid://glcdeh526o5" path="res://scenes/second_level/Cave_level(gabriel)/assets/Scaffolding_and_BG_Parts (16 x 16).png" id="3_6y7hf"]
 [ext_resource type="PackedScene" uid="uid://b0xm6l8m4snaa" path="res://scenes/player.tscn" id="4_mdlgy"]
 [ext_resource type="AudioStream" uid="uid://bwpj8ndiqf6i4" path="res://scenes/first_level/mixkit-footsteps-on-mattress-loop-534.wav" id="5_n6qls"]
-[ext_resource type="Texture2D" uid="uid://maqh705esymx" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Hurt/Bringer-of-Death_Hurt_1.png" id="6_5agcc"]
-[ext_resource type="Texture2D" uid="uid://dacejpdwj7mjl" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Hurt/Bringer-of-Death_Hurt_2.png" id="7_ussbj"]
-[ext_resource type="Texture2D" uid="uid://dkdtpq7yuf1bc" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Hurt/Bringer-of-Death_Hurt_3.png" id="8_jar5a"]
-[ext_resource type="Texture2D" uid="uid://c3utyywvy8krs" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_2.png" id="9_0r8rh"]
-[ext_resource type="Texture2D" uid="uid://clyttqxgtxd3q" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_3.png" id="10_vxedi"]
-[ext_resource type="Texture2D" uid="uid://cmf17ik86skof" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_1.png" id="11_o3u6o"]
-[ext_resource type="Texture2D" uid="uid://d33yswre1q5h2" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_2.png" id="12_liywx"]
-[ext_resource type="Texture2D" uid="uid://b1d67rdkmuqvg" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_3.png" id="13_kkd58"]
-[ext_resource type="Texture2D" uid="uid://xhv872bb3v2h" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_4.png" id="14_62i2x"]
-[ext_resource type="Texture2D" uid="uid://cnedlcp2cj1ah" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_5.png" id="15_3chcg"]
-[ext_resource type="Texture2D" uid="uid://wika6ufl4g7q" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_6.png" id="16_jf6ii"]
-[ext_resource type="Texture2D" uid="uid://bc84vskakdyq" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_7.png" id="17_wc5mj"]
-[ext_resource type="Texture2D" uid="uid://b5a38ag1iyhvy" path="res://scenes/second_level/Cave_level(gabriel)/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_8.png" id="18_pxtxl"]
+
+[sub_resource type="GDScript" id="GDScript_wria1"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	TransitionScreen._fade_out()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	$Player.position = Vector2(32, -5)
+
+func _on_exit_body_entered(area):
+	if area.is_in_group(\"player\"):
+		TransitionScreen._fade_transition()
+		await get_tree().create_timer(1).timeout
+		get_tree().change_scene_to_file(\"res://scenes/second_level/Cave_level(gabriel)/fourth_scene.tscn\")
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yw0yq"]
+load_path = "res://.godot/imported/Gray_Tile_Terrain (16 x 16).png-d0c46cbf546fed95dd930457567cf632.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c0kx8"]
-texture = ExtResource("2_6i68d")
+texture = SubResource("CompressedTexture2D_yw0yq")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -634,8 +644,11 @@ texture = ExtResource("2_6i68d")
 31:20/0/physics_layer_0/angular_velocity = 0.0
 31:20/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nklpe"]
+load_path = "res://.godot/imported/Scaffolding_and_BG_Parts (16 x 16).png-378d8e8958aac012591843dc4010ca01.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_palpm"]
-texture = ExtResource("3_6y7hf")
+texture = SubResource("CompressedTexture2D_nklpe")
 9:1/0 = 0
 9:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:1/0/physics_layer_0/angular_velocity = 0.0
@@ -891,26 +904,65 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_c0kx8")
 sources/2 = SubResource("TileSetAtlasSource_palpm")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y7vg6"]
+load_path = "res://.godot/imported/Bringer-of-Death_Hurt_1.png-4ebbe653170cca7effaf9638a4e45fe7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3o64r"]
+load_path = "res://.godot/imported/Bringer-of-Death_Hurt_2.png-c247610a6bda8a6398bee06a62d6dbe1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wjurm"]
+load_path = "res://.godot/imported/Bringer-of-Death_Hurt_3.png-5304c695b73ded94691b849f26372dcf.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gmhxn"]
+load_path = "res://.godot/imported/Bringer-of-Death_Death_2.png-5798bbc95b08e43599ce617168aeb030.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kyqqn"]
+load_path = "res://.godot/imported/Bringer-of-Death_Death_3.png-3d5f36924f68d7fd28a2ca12ccb17339.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_re315"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_1.png-c9312ada777f971c4e1f3663bf391b40.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ym7d2"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_2.png-5c212ac3b96ef5aefee54a899677dff2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fxjmn"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_3.png-839818d6f366f9e52227bfc38fa0de25.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jlkl3"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_4.png-7c3ec371ba59a76e577720a436f7eab3.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oq5af"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_5.png-214e6725d777dd8d7c4534124c6e7a2f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2ohqt"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_6.png-6c716424c8d98f65d02433c68b2a33d2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sjabn"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_7.png-80b7b49635a219a94d1205aeb07e5da1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qckdv"]
+load_path = "res://.godot/imported/Bringer-of-Death_Idle_8.png-354945fac0c2ed1c9c11a17f050394cd.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_goyxp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_5agcc")
+"texture": SubResource("CompressedTexture2D_y7vg6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_ussbj")
+"texture": SubResource("CompressedTexture2D_3o64r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_jar5a")
+"texture": SubResource("CompressedTexture2D_wjurm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_0r8rh")
+"texture": SubResource("CompressedTexture2D_gmhxn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_vxedi")
+"texture": SubResource("CompressedTexture2D_kyqqn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_0r8rh")
+"texture": SubResource("CompressedTexture2D_gmhxn")
 }],
 "loop": true,
 "name": &"default",
@@ -918,28 +970,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_o3u6o")
+"texture": SubResource("CompressedTexture2D_re315")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_liywx")
+"texture": SubResource("CompressedTexture2D_ym7d2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_kkd58")
+"texture": SubResource("CompressedTexture2D_fxjmn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_62i2x")
+"texture": SubResource("CompressedTexture2D_jlkl3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_3chcg")
+"texture": SubResource("CompressedTexture2D_oq5af")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_jf6ii")
+"texture": SubResource("CompressedTexture2D_2ohqt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_wc5mj")
+"texture": SubResource("CompressedTexture2D_sjabn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_pxtxl")
+"texture": SubResource("CompressedTexture2D_qckdv")
 }],
 "loop": true,
 "name": &"new_animation",
@@ -950,7 +1002,7 @@ animations = [{
 size = Vector2(62.5, 65)
 
 [node name="StartOfLevel" type="Node2D"]
-script = ExtResource("1_4xmmw")
+script = SubResource("GDScript_wria1")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 1)

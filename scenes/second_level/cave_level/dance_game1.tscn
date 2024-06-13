@@ -449,7 +449,7 @@ offset_right = 848.0
 offset_bottom = 408.0
 theme_override_fonts/normal_font = ExtResource("18_yr720")
 theme_override_font_sizes/normal_font_size = 19
-text = "Silencius cruzou os braços e fez uma careta. Sua dança foi tão desajeitada que até as plantas murcharam. Ele olhou para você com uma sobrancelha levantada e disse: ‘Bem, pelo menos eu danço melhor que você!’."
+text = "StumbleFeet cruzou os braços e fez uma careta. Sua dança foi tão desajeitada que até as plantas murcharam. Ele olhou para você com uma sobrancelha levantada e disse: ‘Bem, pelo menos eu danço melhor que você!’."
 
 [node name="Button" type="Button" parent="GameOver"]
 layout_mode = 0
@@ -466,6 +466,97 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_gfhtv")
 action_mode = 0
 text = "Tentar Novamente"
 
+[node name="StartGame" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="ColorRect" type="ColorRect" parent="StartGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -232.0
+offset_right = 240.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StartGame"]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 216.0
+offset_right = 848.0
+offset_bottom = 480.0
+theme_override_fonts/normal_font = ExtResource("18_yr720")
+theme_override_font_sizes/normal_font_size = 19
+text = "Use as setas do teclado para acertar no tempo certar e dançar, fazendo a felicidade chegar a 100%"
+
+[node name="Start" type="Button" parent="StartGame"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 400.0
+offset_right = 824.0
+offset_bottom = 499.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("18_yr720")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_24oot")
+theme_override_styles/hover = SubResource("StyleBoxTexture_884to")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gfhtv")
+action_mode = 0
+text = "Iniciar"
+
+[node name="EndGame" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="EndGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 388.0
+offset_top = 108.0
+offset_right = 860.0
+offset_bottom = 492.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EndGame"]
+offset_left = 480.0
+offset_top = 176.0
+offset_right = 832.0
+offset_bottom = 440.0
+theme_override_fonts/normal_font = ExtResource("18_yr720")
+theme_override_font_sizes/normal_font_size = 19
+text = "StumbleFeet parou de dançar e disse: ‘Agora eu tenho o gingado! Obrigado homem de lata, vamos ver meu pai!’."
+
+[node name="Continue" type="Button" parent="EndGame"]
+offset_left = 480.0
+offset_top = 400.0
+offset_right = 824.0
+offset_bottom = 499.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("18_yr720")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_24oot")
+theme_override_styles/hover = SubResource("StyleBoxTexture_884to")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gfhtv")
+action_mode = 0
+text = "Continuar"
+
 [connection signal="area_entered" from="ArrowDetector/Red" to="ArrowDetector" method="_on_red_area_entered"]
 [connection signal="area_exited" from="ArrowDetector/Red" to="ArrowDetector" method="_on_red_area_exited"]
 [connection signal="area_entered" from="ArrowDetector/Green" to="ArrowDetector" method="_on_green_area_entered"]
@@ -478,3 +569,5 @@ text = "Tentar Novamente"
 [connection signal="timeout" from="ArrowSpawner/SpawnTime" to="ArrowSpawner" method="_on_spawn_time_timeout"]
 [connection signal="area_entered" from="ArrowExit" to="." method="_on_arrow_exit_area_entered"]
 [connection signal="pressed" from="GameOver/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="StartGame/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="EndGame/Continue" to="." method="_on_continue_pressed"]

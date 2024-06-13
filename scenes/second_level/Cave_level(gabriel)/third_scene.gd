@@ -17,4 +17,4 @@ func _on_exit_body_entered(area):
 	if area.is_in_group("player"):
 		TransitionScreen._fade_transition()
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://scenes/second_level/cave_level/dance_game1.tscn")
+		get_tree().change_scene_to_file("res://scenes/second_level/Cave_level(gabriel)/fourth_scene.tscn")

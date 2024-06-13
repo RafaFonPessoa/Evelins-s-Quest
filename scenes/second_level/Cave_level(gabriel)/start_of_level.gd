@@ -4,12 +4,12 @@ const _DIALOG_SCREEN : PackedScene = preload("res://dialog/dialog_screen.tscn")
 
 var _dialog_data1 : Dictionary = {
 	0: {
-		"faceset": "res://sprites/faceset/danceCreature.jpg",
+		"faceset": "res://sprites/faceset/DanceCreature.jpeg",
 		"dialog": "Olá estranho,bem vindo a cidade da dança",
 		"title": "Dance Creature",
 	},
 	1: {
-		"faceset": "res://sprites/faceset/danceCreature.jpg",
+		"faceset": "res://sprites/faceset/DanceCreature.jpeg",
 		"dialog": "A cidade onde todos se comunicam dançando",
 		"title": "Dance Creature",
 	},
@@ -19,7 +19,7 @@ var _dialog_data1 : Dictionary = {
 		"title": "Hope Bringer",
 	},
 	3: {
-		"faceset": "res://sprites/faceset/danceCreature.jpg",
+		"faceset": "res://sprites/faceset/DanceCreature.jpeg",
 		"dialog": "ta duvidando?se liga no gingado do pai",
 		"title": "Dance Creature",
 	},

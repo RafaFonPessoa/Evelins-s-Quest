@@ -17,7 +17,7 @@ var _dialog_data1 : Dictionary = {
 	},
 	2: {
 		"faceset": "res://sprites/faceset/GraceGiver.png",
-		"dialog": "Você? Fora de forma? Pare de besteira, me lembro quando eu era um jovem Hope Bringer como você, eu corria por horas sem me cansar.",
+		"dialog": "Você? Fora de forma? Pare de besteira, me lembro quando eu era um jovem Hope Bringer como você, eu corria por horas sem me cansar. Você está melhor que os outros Hope Bringers",
 		"title": "Grace Giver",
 	},
 	3: {
