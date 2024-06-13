@@ -74,7 +74,7 @@ func _physics_process(delta):
 	if lv3Door and Input.is_action_pressed("interact"):
 		TransitionScreen._fade_transition()
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://scenes/third_level/battlefiel.gd")
+		get_tree().change_scene_to_file("res://scenes/Rocket/rocket_animation3.tscn")
 
 
 func _on_level_1_body_entered(body):

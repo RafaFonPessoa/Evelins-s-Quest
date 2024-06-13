@@ -71,10 +71,9 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="Castle" type="Node2D" node_paths=PackedStringArray("hud")]
+[node name="Castle" type="Node2D"]
 position = Vector2(-54, 0)
 script = ExtResource("1_476eh")
-hud = NodePath("")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 2)
